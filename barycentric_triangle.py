@@ -2,8 +2,8 @@
 ###Initial commit had 3 sections that did literally nothing
 
 # Setup the Library
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 # Exercise 2: Reorganization
@@ -50,16 +50,9 @@ def generate_triangle(width=800, height=700, border=150):
     # Loop through every pixel
     for y in range(height):
         for x in range(width):
-
             p = np.array([x, y])
 
-            if point_in_triangle(
-                p,
-                red_point,
-                green_point,
-                blue_point
-            ):
-
+            if point_in_triangle(p, red_point, green_point, blue_point):
                 d_red = np.linalg.norm(p - red_point)
                 d_green = np.linalg.norm(p - green_point)
                 d_blue = np.linalg.norm(p - blue_point)
@@ -84,28 +77,16 @@ def plot_point(red, green, blue):
 
     total = red + green + blue
 
-    x = (
-        red * 400 +
-        green * 150 +
-        blue * 650
-    ) / total
+    x = (red * 400 + green * 150 + blue * 650) / total
 
-    y = (
-        red * 150 +
-        green * 550 +
-        blue * 550
-    ) / total
+    y = (red * 150 + green * 550 + blue * 550) / total
 
-    plt.plot(x, y, marker='o', markersize=15, color='black')
+    plt.plot(x, y, marker="o", markersize=15, color="black")
 
 
 # Exercise 4: Display and optionally save the figure
 def display_triangle(
-    red=0.25,
-    green=0.1,
-    blue=0.9,
-    save=False,
-    filename="triangle1.png"
+    red=0.25, green=0.1, blue=0.9, save=False, filename="triangle1.png"
 ):
 
     image = generate_triangle()
@@ -124,7 +105,7 @@ def display_triangle(
         plt.savefig(filename)
 
     plt.show()
-    
-    
+
+
 if __name__ == "__main__":
-    display_triangle() 
+    display_triangle()
